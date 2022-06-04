@@ -1,12 +1,12 @@
 # mcbe
-an npm to help addon creators
+An npm to help addon creators
 ## Install
 ```bash
-npm i mbe
+npm i mcbe
 ```
 ## Usage
 ```js
-const mcbe = require('mbe')
+const mcbe = require('mcbe')
 //Manifest Generator
 const Manifest = mcbe.Manifest({
  name: "Manifest",

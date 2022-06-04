@@ -75,5 +75,4 @@ const Item = mcbe.ItemAutomatic({
 //Use it to lend a hand :>
 ```
 ## My Server
-[Server Discord](https://discord.io/minelab)# mcbe
-# mcbe
+[Server Discord](https://discord.io/minelab)

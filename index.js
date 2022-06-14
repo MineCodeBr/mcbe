@@ -1,9 +1,9 @@
 'use strict';
 try {
-exports.Manifest = require('./main/Manifest.js')
-exports.ItemAutomatic = require('./main/ItemAuto.js')
-exports.TemplateAddon = require('./main/TemplateAddon.js')
-exports.Formater = require('./main/Formater.js')
+exports.Manifest = require('./main/Manifest')
+exports.ItemAutomatic = require('./main/ItemAuto')
+exports.TemplateAddon = require('./main/TemplateAddon')
+exports.Formater = require('./main/Formater')
 } catch (e) {
- console.error(`[ERRO MCBE] ` + e)
+ console.error(`[ERRO MCBE]`, e)
 }

@@ -25,41 +25,35 @@ new Addon("Hello", "By MineCodeBR")
 			count: 1
 		}
 	})
-	.addBlock(
-		new Block("mc:testee")
-			.setStates({
-				"mc:testee": [0, 1, 2, 3, 4]
-			})
-			//.setComponent("minecraft:boolean", true)
-			//.setComponent("minecraft:object", { up: false })
-			.setComponent("minecraft:light_dampening", 0)
-			.setComponent("minecraft:loot", {
-				dest: "loot_tables/hello/nhem.json",
-				loot: {
-					rolls: 1,
-					entries: [
-						{
-							type: "item",
-							name: "minecraft:apple",
-						},
-					],
-				},
-			})           //  src
-			.setGeometry("./cube.geo.json", {
-				bb_main: true,
-			})
-			.setTerrainTexture("grass", "textures/blocks/gras", "./grass.png")
-			.setMaterialTexture({
-				"*": "stone",						//Default
-				"minecraft:stone": "stone"
-			})
-	)
-	.addItem(
-		new Item("mc:testee")
-			.setComponent("minecraft:display_name", {
-				value: "Hello"
-			})
-	);	
+.addBlock(
+	new Block("mc:testee")
+	.setStates({ "mc:testee": [0, 1, 2, 3, 4] })
+	//.setComponent("minecraft:boolean", true)
+	//.setComponent("minecraft:object", { up: false })
+	.setComponent("minecraft:light_dampening", 0)
+	.setComponent("minecraft:loot", {
+		dest: "loot_tables/hello/nhem.json",
+		loot: {
+			rolls: 1,
+			entries: [{
+					type: "item",
+					name: "minecraft:apple",
+				}],
+	        },
+    })                  //  src
+	.setGeometry("./cube.geo.json", { bb_main: true, })
+	.setTerrainTexture("grass", "textures/blocks/gras", "./grass.png")
+	.setMaterialTexture({
+      "*": "stone",				
+	  "minecraft:stone": "stone"
+	})
+)
+.addItem(
+     new Item("mc:testee")
+	   .setComponent("minecraft:display_name", {
+		  value: "Hello"
+	   })
+);	
 
 
 //Use it to lend a hand :>

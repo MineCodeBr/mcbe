@@ -1,0 +1,44 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "Hello",
+    "name": "Hello BE",
+    "uuid": "c1945cc3-8672-4940-b65e-404cecbf3e70",
+    "version": [
+      0,
+      0,
+      1
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      10
+    ]
+  },
+  "modules": [
+    {
+      "description": "Hello",
+      "type": "script",
+      "uuid": "5564fb40-f362-4efd-9b6f-353056b8ef9b",
+      "version": [
+        1,
+        0,
+        0
+      ],
+      "entry": "scripts/index.js"
+    }
+  ],
+  "capabilities": [
+    "script_eval"
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.10.0"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "1.1.0"
+    }
+  ]
+}

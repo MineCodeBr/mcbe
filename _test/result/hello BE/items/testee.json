@@ -1,0 +1,17 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "mc:testee",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:custom_components": [],
+      "minecraft:display_name": {
+        "value": "Hello"
+      }
+    }
+  }
+}

@@ -59,8 +59,8 @@ new Addon("Hello", "By MineCodeBR")
 //Use it to lend a hand :>
 ```
 ## Result
-![Result](https://imgur.com/7YJC0gF)
+![Result](https://i.imgur.com/7YJC0gF.png)
 ## Nessesary
-![Result](https://imgur.com/WR6Byrr)
+![Result](https://i.imgur.com/WR6Byrr.png)
 ## My Server
 [Server Discord](https://discord.gg/6gFuNQdqky)

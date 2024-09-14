@@ -49,7 +49,7 @@ module.exports = class {
         header: {
           description: this.description,
           name: this.name + " RE",
-          uuid: "74018fcd-5447-4716-9253-4732f6f768f1",
+          uuid: uuid(),
           version: [1, 0, 0],
           min_engine_version: [1, 21, 10],
         },
@@ -57,7 +57,7 @@ module.exports = class {
           {
             description: this.description,
             type: "resources",
-            uuid: "7850110b-6d86-4f1f-ad20-1e920fb22f87",
+            uuid: uuid(),
             version: [1, 0, 0],
           },
         ],

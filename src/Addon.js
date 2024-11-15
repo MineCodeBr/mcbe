@@ -1,18 +1,24 @@
 const fs = require("node:fs");
-const { uuid } = require("../utils");
+const { uuid, formatVersion, stringify } = require("../utils");
 
 let add = "";
 
 console.log("Start")
 module.exports = class {
-  constructor(name, description = "No author!!") {
+  constructor(name, description = "No author!!", options = {}) {
     this.name = name;
     this.description = name;
     this.files = "";
+    this.build = options?.build ? options?.build : false
+    this.overwrite = options?.overwrite ? options.overwrite : false
   }
   toManifestCreated(dirBe, dirRe) {
     this.dirBe = dirBe;
     this.dirRe = dirRe || dirBe;
+    if (this.overwrite) {
+      fs.rmSync(this.dirRe + " RE", { recursive: true, force: true });
+      fs.rmSync(this.dirBe + " BE", { recursive: true, force: true });
+    }
     const manifests = {
       be: {
         format_version: 2,
@@ -21,7 +27,7 @@ module.exports = class {
           name: this.name + " BE",
           uuid: uuid(),
           version: [0, 0, 1],
-          min_engine_version: [1, 21, 10],
+          min_engine_version: [...formatVersion.split(".")],
         },
         modules: [
           {
@@ -36,7 +42,7 @@ module.exports = class {
         dependencies: [
           {
             module_name: "@minecraft/server",
-            version: "1.10.0",
+            version: "1.15.0",
           },
           {
             module_name: "@minecraft/server-ui",
@@ -51,7 +57,7 @@ module.exports = class {
           name: this.name + " RE",
           uuid: uuid(),
           version: [1, 0, 0],
-          min_engine_version: [1, 21, 10],
+          min_engine_version: [...formatVersion.split(".")],
         },
         modules: [
           {
@@ -67,12 +73,12 @@ module.exports = class {
       if (!fs.existsSync(dirBe + " BE")) fs.mkdirSync(dirBe + " BE", { recursive: true });
       fs.writeFileSync(
         `${dirBe + " BE"}/manifest.json`,
-        JSON.stringify(manifests["be"], null, 2),
+        stringify(manifests["be"], this.build),
       );
       if (!fs.existsSync(this.dirRe + " RE")) fs.mkdirSync(this.dirRe + " RE", { recursive: true });
       fs.writeFileSync(
         `${this.dirRe + " RE"}/manifest.json`,
-        JSON.stringify(manifests["re"], null, 2),
+        stringify(manifests["re"], this.build),
       );
     }
     return this;
@@ -86,7 +92,7 @@ module.exports = class {
         fs.mkdirSync(`${this.dirBe} BE/blocks`, { recursive: true });
       fs.writeFileSync(
         `${this.dirBe + " BE"}/blocks/${data.filename}.json`,
-        JSON.stringify(data.source, null, 2),
+        stringify(data.source, this.build),
       );
     }
     if (fs.existsSync(`${this.dirBe + " BE"}/scripts/blocks`)) {
@@ -106,7 +112,7 @@ module.exports = class {
         fs.mkdirSync(`${this.dirBe} BE/items`, { recursive: true });
       fs.writeFileSync(
         `${this.dirBe + " BE"}/items/${data.filename}.json`,
-        JSON.stringify(data.source, null, 2),
+        stringify(data.source, this.build),
       );
     }
     if (fs.existsSync(`${this.dirBe + " BE"}/scripts/items`)) {
@@ -139,7 +145,7 @@ module.exports = class {
 
     fs.writeFileSync(
       `${this.dirBe + " BE"}/recipes/${recipe.identifier.split(":").pop()}.json`,
-      JSON.stringify(result, null, 2),
+      stringify(result, this.build),
     );
     return this;
   }

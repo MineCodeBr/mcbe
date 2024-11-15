@@ -1,5 +1,6 @@
 const fs = require("node:fs");
-
+const beautify = require("js-beautify")
+const { formatVersion, stringify } = require("../utils")
 
 let allComp = ""
 const baseCustomItem = `import * as mc from "@minecraft/server"
@@ -13,7 +14,7 @@ module.exports = class {
         this.id = id || "mc:item";
         this.filename = id.split(":")[1];
         this.source = {
-            format_version: "1.21.10",
+            format_version: formatVersion,
             "minecraft:item": {
                 description: {
                     identifier: this.id,
@@ -58,20 +59,21 @@ module.exports = class {
 
             fs.writeFileSync(
                 `${v.dirRe} RE/textures/item_texture.json`,
-                JSON.stringify(data, null, 2),
+                stringify(data, v.build),
             );
         };
         return this;
     }
-    setCustomComponent(nameCustomComp, name, callback) {
-        this.source["minecraft:item"]["components"]["minecraft:custom_components"].push(nameCustomComp);
+    setCustomComponent(customName, typeComponent, callback, options = {}) {
+        this.source["minecraft:item"]["components"]["minecraft:custom_components"].push(customName);
         const addComp = `data.itemComponentRegistry.registerCustomComponent("nameCustomComp", {"nameEvent": replaceCode,
     })
     `
             .replaceAll(/replaceCode/ig, String(callback))
-            .replaceAll(/nameCustomComp/ig, String(nameCustomComp))
-            .replaceAll(/nameEvent/ig, String(name))
+            .replaceAll(/nameCustomComp/ig, String(customName))
+            .replaceAll(/nameEvent/ig, String(typeComponent))
         allComp += addComp
+        if (Object.keys(options)[0]) this.source["minecraft:item"]["components"][Object.keys(options)[0]] = options[Object.keys(options)[0]]
         this.run["set_custom_component"] = (v) => {
             const data = baseCustomItem.replace("//body", allComp)
 

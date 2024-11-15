@@ -1,6 +1,6 @@
 {
   "name": "mcbe",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "For Addon Creator",
   "main": "index.js",
   "scripts": {

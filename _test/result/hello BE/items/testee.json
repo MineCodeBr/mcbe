@@ -1,17 +1,1 @@
-{
-  "format_version": "1.21.10",
-  "minecraft:item": {
-    "description": {
-      "identifier": "mc:testee",
-      "menu_category": {
-        "category": "items"
-      }
-    },
-    "components": {
-      "minecraft:custom_components": [],
-      "minecraft:display_name": {
-        "value": "Hello"
-      }
-    }
-  }
-}
+{"format_version":"1.21.40","minecraft:item":{"description":{"identifier":"mc:testee","menu_category":{"category":"items"}},"components":{"minecraft:custom_components":["mc:test"],"minecraft:tag":{"tags":["tag1","tag2"]},"minecraft:icon":{"texture":"stone"},"minecraft:display_name":{"value":"Testee"},"minecraft:creative_category":{"parent":"items"}}}}

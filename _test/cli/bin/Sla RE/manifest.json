@@ -1,0 +1,30 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "By Matt",
+    "name": "Sla Test RE",
+    "uuid": "23f71499-4c86-46ff-bf38-d6a89fbbed7b",
+    "version": [
+      1,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      "1",
+      "21",
+      "40"
+    ]
+  },
+  "modules": [
+    {
+      "description": "By Matt",
+      "type": "resources",
+      "uuid": "61c32bfe-001e-4fa5-9d3d-912a0f8daef2",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ]
+}

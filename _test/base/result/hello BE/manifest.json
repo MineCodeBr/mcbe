@@ -1,0 +1,44 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "By MineCodeBR",
+    "name": "Hello BE",
+    "uuid": "ff2239a9-5519-4e2f-92c7-81273ced2635",
+    "version": [
+      0,
+      0,
+      1
+    ],
+    "min_engine_version": [
+      "1",
+      "21",
+      "40"
+    ]
+  },
+  "modules": [
+    {
+      "description": "By MineCodeBR",
+      "type": "script",
+      "uuid": "66890be2-8e75-4861-ba50-368cb5a9a37a",
+      "version": [
+        1,
+        0,
+        0
+      ],
+      "entry": "scripts/index.js"
+    }
+  ],
+  "capabilities": [
+    "script_eval"
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.15.0"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "1.1.0"
+    }
+  ]
+}

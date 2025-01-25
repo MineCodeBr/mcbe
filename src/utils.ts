@@ -3,7 +3,7 @@ import { randomUUID } from "crypto"
 import { existsSync, mkdirSync, readFile, readFileSync, writeFileSync } from "fs"
 
 export const log = (arg: string) => console.log(`${chalk.bgBlue(" MCBE ")} ${arg}`)
-export const warn = (arg: string, arg2: string) => console.log(`${chalk.bgYellow(" MCBE ")} ${arg}${arg2 ? `\n     > ${chalk.gray(arg2)}` : ""}`)
+export const warn = (arg: string, arg2: string) => console.log(`${chalk.white.bgYellow(" MCBE ")} ${arg}${arg2 ? `\n     > ${chalk.gray(arg2)}` : ""}`)
 export const error = (arg: string, arg2?: string) => {
     console.log(`${chalk.bgRed(" MCBE ")} ${arg}${arg2 ? `\n     > ${chalk.gray(arg2)}` : ""}`)
     process.exit(1)

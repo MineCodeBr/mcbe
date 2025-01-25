@@ -7,6 +7,5 @@ module.exports = new Item("apple")
     ])
     .setEvents([
         ItemEvents.MineBlock((ev) => {
-
         }),
     ])

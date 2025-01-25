@@ -1,7 +1,6 @@
 const { Block, BlockComponents, BlockEvents } = require("../../src")
 
 //chest_inventory_top
-
 module.exports = new Block("control")
     .setComponents([
         BlockComponents.Geometry({
@@ -13,6 +12,7 @@ module.exports = new Block("control")
                 render_method: "alpha_test"
             },
         })
+
     ])
     .setEvents([
         BlockEvents.BlockBroken((ev) => {

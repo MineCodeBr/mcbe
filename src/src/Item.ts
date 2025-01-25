@@ -72,11 +72,12 @@ export default class {
             Object(this.code["minecraft:item"].components)["minecraft:custom_components"].push(idEvent)
 
 
-            this.scriptcode += `try{
-                event.blockComponentRegistry.registerCustomComponent('${idEvent}',{${event.id}: (event)=> {
+            this.scriptcode +=
+                `try {
+            event.blockComponentRegistry.registerCustomComponent('${idEvent}',{${event.id}: (event)=> {
                 try {
                      (${event.callback.toString()})(event)
-                }catch(error){
+                } catch (error){
                 console.warn("Error on [${this.id}] event [${event.id}] "+error)
                 }
                     }

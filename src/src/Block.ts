@@ -32,6 +32,15 @@ export const BlockComponents = {
     LightDampening: (value: number) => ({ name: "minecraft:light_dampening", state: value }),
     LightEmission: (value: number) => ({ name: "minecraft:light_emission", state: value }),
     Loot: (value: string) => ({ name: "minecraft:loot", state: value }),
+    Friction: (value: number) => ({ name: "minecraft:friction", state: value }),
+    MapColor: (value: string | [number, number, number]) => ({ name: "minecraft:", state: value }),
+    Transformation: (value: {
+        "translation"?: [number, number, number],
+        "rotation"?: [number, number, number],
+        "scale"?: [number, number, number],
+        "rotation_pivot"?: [number, number, number]
+        "scale_pivot"?: [number, number, number]
+    }) => ({ name: "minecraft:", state: value }),
     Texture: (value: {
         [key: string]: {
             texture: string,
@@ -151,22 +160,12 @@ export default class {
         return this
     }
 
-    setPermutation(permutation: {
-        [key: string]: {
-            "condition": string,
-            "components": object,
-        }
-    }) {
-        this.code["minecraft:block"].permutations.push(permutation)
+    setPermutation(condition: string, component: CommumComponent | CommumComponent[]) {
+        this.code["minecraft:block"].permutations.push({ condition, components: component })
 
         return this
     }
-    setPermutations(permutation: ({
-        [key: string]: {
-            "condition": string,
-            "components": object,
-        }
-    })[]) {
+    setPermutations(permutation: ({ condition: string, component: CommumComponent | CommumComponent[] })[]) {
         this.code["minecraft:block"].permutations = permutation
 
         return this

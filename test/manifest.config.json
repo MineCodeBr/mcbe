@@ -3,7 +3,6 @@
     "name": "Best addon lib",
     "description": "Best addon lib",
     "namespace": "mc",
-    "build_mode": true,
     "output": {
         "bh": "./result/bh",
         "res": "./result/res"

@@ -1,51 +1,35 @@
 {
   "name": "mcbe",
-  "version": "1.2.9",
-  "description": "For Addon Creator",
-  "author": "MineCodeBr",
-  "license": "MIT",
-  "keywords": [
-    "minecraft",
-    "bedrock",
-    "utils"
-  ],
-  "bugs": {
-    "url": "https://github.com/MineCodeBr/mcbe/issues"
+  "version": "1.0.0",
+  "directories": {
+    "test": "test",
+    "src": "src"
   },
-  "homepage": "https://github.com/MineCodeBr/mcbe#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/MineCodeBr/mcbe.git"
-  },
-  "bin": {
-    "mcbe": "dist/cli/index.js"
-  },
-  "scripts": {
-    "build": "tsup",
-    "install-cli": "npm run build && chmod +x ./dist/cli/index.js && sudo npm i -g .",
-    "test": "cd _test/base && tsx ./index.ts",
-    "test-cli": "cd _test/cli && tsx ../../cli/index.ts"
-  },
+  "bin": "./dist/cli/index.js",
   "main": "./dist/index.js",
   "module": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "devDependencies": {
-    "@types/cli-color": "^2.0.6",
-    "@types/js-beautify": "^1.14.3",
-    "@types/node": "^22.10.1",
-    "tslib": "^2.8.1",
-    "tsup": "^8.3.5",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.2",
-    "typescript-eslint": "^8.18.0"
+  "scripts": {
+    "build": "tsup",
+    "install-cli": "npm run build && chmod +x ./dist/cli/index.js && sudo npm i -g .",
+    "test": "cd ./test/ && npx tsx ../src/cli/index.ts"
   },
   "dependencies": {
     "@minecraft/server": "^1.16.0",
-    "cli-color": "^2.0.4",
-    "commander": "^12.1.0",
-    "js-beautify": "^1.15.1"
-  }
+    "@minecraft/server-ui": "^1.3.0",
+    "@swc/core": "^1.10.9",
+    "chalk": "^4.1.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

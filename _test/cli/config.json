@@ -1,8 +1,0 @@
-{
-    "name": "Sla Test",
-    "description": "By Matt",
-    "compile": {
-        "outPutBeh": "bin/Sla",
-        "outPutRes": "bin/Sla"
-    }
-}

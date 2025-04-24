@@ -1,0 +1,6 @@
+node_modules
+pnpm-lock.yaml
+pnpm-workspace.yaml
+.npmrc
+har_and_cookies
+.vscode

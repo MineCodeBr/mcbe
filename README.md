@@ -1,66 +1,34 @@
 # mcbe
+
 An npm to help addon creators
+
 ## Install
+
 ```bash
 npm i mcbe
 ```
-## Usage
+
+## Example
+
 ```js
-const { Addon, Block, Item } = require("mcbe");
+const { Block, Sword } = require("mcbe");
 
-new Addon("Hello", "By MineCodeBR")
-	.toManifestCreated("./result/hello")
-	.setRecipe({
-		type: "minecraft:crafting_shaped",
-		identifier: "mc:testee",
-		tables: ["crafting_table", "altar"],
-		pattern: ["#", "#", "#"],
-		key: {
-			"#": {
-				item: "minecraft:stone"
-			}
-		},
-		result: {
-			item: "mc:testee",
-			count: 1
-		}
-	})
-.addBlock(
-	new Block("mc:testee")
-	.setStates({ "mc:testee": [0, 1, 2, 3, 4] })
-	//.setComponent("minecraft:boolean", true)
-	//.setComponent("minecraft:object", { up: false })
-	.setComponent("minecraft:light_dampening", 0)
-	.setComponent("minecraft:loot", {
-		dest: "loot_tables/hello/nhem.json",
-		loot: {
-			rolls: 1,
-			entries: [{
-					type: "item",
-					name: "minecraft:apple",
-				}],
-	        },
-    })                  //  src
-	.setGeometry("./cube.geo.json", { bb_main: true, })
-	.setTerrainTexture("grass", "textures/blocks/gras", "./grass.png")
-	.setMaterialTexture({
-      "*": "stone",				
-	  "minecraft:stone": "stone"
-	})
-)
-.addItem(
-     new Item("mc:testee")
-	   .setComponent("minecraft:display_name", {
-		  value: "Hello"
-	   })
-);	
+new Block("minecraft:sla")
+  .setComponent("minecraft:display_name", "Ola")
+  .setComponent("minecraft:pushable", false)
+  .setComponent("minecraft:breathability", "solid")
+  .onPlace((arg) => {
+    console.warn("Ola");
+  })
+  .onTick((a) => {
+    a.dimension;
+  });
 
-
-//Use it to lend a hand :>
+new Sword("mc:Ola").setDamage(100);
 ```
-## Result
-![Result](https://i.imgur.com/7YJC0gF.png)
-## Nessesary
-![Result](https://i.imgur.com/WR6Byrr.png)
-## My Server
-[Server Discord](https://discord.gg/6gFuNQdqky)
+
+## Autocomplete
+
+![Autocomplete](https://i.imgur.com/ZoHwOD2.png)
+
+## [See more examples by clicking here](https://github.com/MineCodeBr/mcbe)

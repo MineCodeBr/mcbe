@@ -1,0 +1,111 @@
+import { BlockComponentNames, BlockBase } from "./block";
+import { ItemComponentNames, ItemBase } from "./item";
+
+export type Category =
+  | "construction"
+  | "equipment"
+  | "items"
+  | "nature"
+  | "none";
+
+export type MinecraftItemGroupsArrayType =
+  | "minecraft:itemGroup.name.anvil"
+  | "minecraft:itemGroup.name.arrow"
+  | "minecraft:itemGroup.name.axe"
+  | "minecraft:itemGroup.name.banner"
+  | "minecraft:itemGroup.name.banner_pattern"
+  | "minecraft:itemGroup.name.bed"
+  | "minecraft:itemGroup.name.boat"
+  | "minecraft:itemGroup.name.boots"
+  | "minecraft:itemGroup.name.bundles"
+  | "minecraft:itemGroup.name.buttons"
+  | "minecraft:itemGroup.name.candles"
+  | "minecraft:itemGroup.name.chalkboard"
+  | "minecraft:itemGroup.name.chest"
+  | "minecraft:itemGroup.name.chestboat"
+  | "minecraft:itemGroup.name.chestplate"
+  | "minecraft:itemGroup.name.compounds"
+  | "minecraft:itemGroup.name.concrete"
+  | "minecraft:itemGroup.name.concretePowder"
+  | "minecraft:itemGroup.name.cookedFood"
+  | "minecraft:itemGroup.name.copper"
+  | "minecraft:itemGroup.name.coral"
+  | "minecraft:itemGroup.name.coral_decorations"
+  | "minecraft:itemGroup.name.crop"
+  | "minecraft:itemGroup.name.door"
+  | "minecraft:itemGroup.name.dye"
+  | "minecraft:itemGroup.name.enchantedBook"
+  | "minecraft:itemGroup.name.fence"
+  | "minecraft:itemGroup.name.fenceGate"
+  | "minecraft:itemGroup.name.firework"
+  | "minecraft:itemGroup.name.fireworkStars"
+  | "minecraft:itemGroup.name.flower"
+  | "minecraft:itemGroup.name.glass"
+  | "minecraft:itemGroup.name.glassPane"
+  | "minecraft:itemGroup.name.glazedTerracotta"
+  | "minecraft:itemGroup.name.goatHorn"
+  | "minecraft:itemGroup.name.grass"
+  | "minecraft:itemGroup.name.hanging_sign"
+  | "minecraft:itemGroup.name.helmet"
+  | "minecraft:itemGroup.name.hoe"
+  | "minecraft:itemGroup.name.horseArmor"
+  | "minecraft:itemGroup.name.leaves"
+  | "minecraft:itemGroup.name.leggings"
+  | "minecraft:itemGroup.name.lingeringPotion"
+  | "minecraft:itemGroup.name.log"
+  | "minecraft:itemGroup.name.minecart"
+  | "minecraft:itemGroup.name.miscFood"
+  | "minecraft:itemGroup.name.mobEgg"
+  | "minecraft:itemGroup.name.monsterStoneEgg"
+  | "minecraft:itemGroup.name.mushroom"
+  | "minecraft:itemGroup.name.netherWartBlock"
+  | "minecraft:itemGroup.name.ominousBottle"
+  | "minecraft:itemGroup.name.ore"
+  | "minecraft:itemGroup.name.permission"
+  | "minecraft:itemGroup.name.pickaxe"
+  | "minecraft:itemGroup.name.planks"
+  | "minecraft:itemGroup.name.potion"
+  | "minecraft:itemGroup.name.potterySherds"
+  | "minecraft:itemGroup.name.pressurePlate"
+  | "minecraft:itemGroup.name.products"
+  | "minecraft:itemGroup.name.rail"
+  | "minecraft:itemGroup.name.rawFood"
+  | "minecraft:itemGroup.name.record"
+  | "minecraft:itemGroup.name.sandstone"
+  | "minecraft:itemGroup.name.sapling"
+  | "minecraft:itemGroup.name.sculk"
+  | "minecraft:itemGroup.name.seed"
+  | "minecraft:itemGroup.name.shovel"
+  | "minecraft:itemGroup.name.shulkerBox"
+  | "minecraft:itemGroup.name.sign"
+  | "minecraft:itemGroup.name.skull"
+  | "minecraft:itemGroup.name.slab"
+  | "minecraft:itemGroup.name.smithing_templates"
+  | "minecraft:itemGroup.name.splashPotion"
+  | "minecraft:itemGroup.name.stainedClay"
+  | "minecraft:itemGroup.name.stairs"
+  | "minecraft:itemGroup.name.stone"
+  | "minecraft:itemGroup.name.stoneBrick"
+  | "minecraft:itemGroup.name.sword"
+  | "minecraft:itemGroup.name.trapdoor"
+  | "minecraft:itemGroup.name.walls"
+  | "minecraft:itemGroup.name.wood"
+  | "minecraft:itemGroup.name.wool"
+  | "minecraft:itemGroup.name.woolCarpet";
+
+export type MaterialTypes =
+  | "opaque"
+  | "blend"
+  | "double_sided"
+  | "alpha_test"
+  | "alpha_test_single_sided";
+
+export interface Addon {
+  format_version: string;
+  name: string;
+  description: string;
+  namespace: string;
+  build_mode: boolean;
+  icon: string | "./pack_icon.png";
+}
+export { BlockComponentNames, BlockBase, ItemComponentNames, ItemBase };
